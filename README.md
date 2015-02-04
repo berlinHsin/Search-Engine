@@ -29,3 +29,6 @@ and synonym clusters are labeled by users .
 	4/11 - 5/10 : text reporting .
 	5/10 -      : improvement .
 
+
+## PROGRESS :
+	2/4 : decide to use RoR as tool .
