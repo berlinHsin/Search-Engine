@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+	root :to => 'index#index'
+	get 'index/upload' => 'index#upload'
+	get 'index/tagging' => 'index#tagging'
+	post 'addTag' => 'index#addTag'
+	get 'index/child' => 'index#child'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

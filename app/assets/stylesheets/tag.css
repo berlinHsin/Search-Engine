@@ -1,0 +1,13 @@
+.parent {
+	margin-bottom : 20px;
+}
+.label {
+	margin : 5px; 
+}
+[parent] {
+	margin-top : 5px;
+	margin-bottom :2px;
+}
+.input {
+	margin-top : 10px;
+}

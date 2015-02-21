@@ -1,0 +1,21 @@
+<div class='container-fluid'>
+	<p><%= flash[:notice] %></p>
+	<%= form_tag("/addTag",method: "post") do%>
+		<div class='parent'>
+			<span>請選擇父標籤 :</span>
+			<% @Tags.each do |t|%>
+				<div class='label label-default' >
+					<%= check_box_tag("parents[]",t.id) %>
+					<%= label_tag("1",t.label)%>
+				</div>
+			<% end %>
+		</div>
+		<div class='child'>
+		</div>
+		<div class='input'>
+			<span>請輸入新增標籤 :</span>
+			<%= text_field_tag(:tag) %>
+			<%= submit_tag("新增")%>
+		</div>
+	<%end%>
+</div>
