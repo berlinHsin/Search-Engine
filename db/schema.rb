@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212191913) do
+ActiveRecord::Schema.define(version: 20150303064611) do
+
+  create_table "Basic", force: :cascade do |t|
+    t.integer "f_id",    limit: 4,     null: false
+    t.integer "l_id",    limit: 4,     null: false
+    t.string  "title",   limit: 255,   null: false
+    t.string  "author",  limit: 255,   null: false
+    t.string  "publish", limit: 255,   null: false
+    t.string  "country", limit: 255,   null: false
+    t.string  "lang",    limit: 2552,  null: false
+    t.string  "year",    limit: 10,    null: false
+    t.integer "type",    limit: 4,     null: false
+    t.text    "content", limit: 65535, null: false
+  end
+
+  create_table "File", force: :cascade do |t|
+    t.string "src", limit: 255
+  end
+
+  create_table "Label", force: :cascade do |t|
+    t.string  "label", limit: 20
+    t.integer "p_id",  limit: 4,  default: 0, null: false
+    t.integer "layer", limit: 4,              null: false
+  end
+
+  create_table "basics", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tags", force: :cascade do |t|
     t.string   "label",      limit: 255

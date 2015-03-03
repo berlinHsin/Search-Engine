@@ -1,0 +1,39 @@
+<div class='container-fluid'>
+	<p><%= flash[:notice] %></p>
+	<%= form_tag({:action=>'upload_file'},:multipart=>true) do %>
+		<div>
+			<%= label_tag(:title,"標題:")%>
+			<%= text_field_tag(:title)%>
+		</div>
+		<div>
+			<%= label_tag(:author,"作者:")%>
+			<%= text_field_tag(:author)%>
+		</div>
+		<div>
+			<%= label_tag(:publish,"出版單位:")%>
+			<%= text_field_tag(:publish)%>
+		</div>
+		<div>
+			<%= label_tag(:country,"國家:")%>
+			<%= text_field_tag(:country)%>
+		</div>
+		<div>
+			<%= label_tag(:lang,"語言:")%>
+			<%= text_field_tag(:lang)%>
+		</div>
+		<div>
+			<%= label_tag(:year,"年份：")%>
+			<%= text_field_tag(:year)%>
+		</div>
+		<div>
+			<%= label_tag(:type,"文件類型:")%>
+			<% options=[ ['學術期刊',1],['碩博士論文',2],['研究報告',3],['政府公開資訊',4],['公開演講',5],['報章雜誌',6],['網頁資料',7] ] %>
+			<%= select_tag(:type,options_for_select(options,1))%>
+		</div>
+		<div>
+			<%= label_tag(:upload,"上傳:")%>
+			<%= file_field(:upload,'datafile')%>
+		</div>
+		<%= submit_tag("上傳")%>
+	<%end%>
+</div>

@@ -28,5 +28,11 @@ class IndexController < ApplicationController
 		flash[:notice] = "已加入標籤"
 		redirect_to(:action=>'tagging')
 	end
+	def upload_file
+		@file = Basic.new() 
+		@file.save()
+
+		redirect_to(:action=>'upload')
+	end
 
 end
